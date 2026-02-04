@@ -30,6 +30,16 @@ function applyTheme(theme) {
         htmlElement.removeAttribute('data-theme');
     }
     localStorage.setItem('theme', theme);
+    
+    // Cambiar imagen de perfil según el tema
+    const profileImage = document.querySelector('.profile-image');
+    if (profileImage) {
+        if (theme === 'light') {
+            profileImage.src = 'assets/favicon-dark.png';
+        } else {
+            profileImage.src = 'assets/favicon-white.png';
+        }
+    }
 }
 
 // Aplicar el tema inicial
